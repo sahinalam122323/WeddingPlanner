@@ -4,10 +4,35 @@ function setupMobileMenu(){
 	const toggle = document.querySelector('.menu-toggle') as HTMLButtonElement | null
 	const nav = document.getElementById('primary-navigation')
 	if(!toggle || !nav) return
+
+	const openIcon = toggle.querySelector('.menu-icon-open')
+	const closeIcon = toggle.querySelector('.menu-icon-close')
+
 	toggle.addEventListener('click', ()=>{
 		const expanded = toggle.getAttribute('aria-expanded') === 'true'
-		toggle.setAttribute('aria-expanded', String(!expanded))
-		nav.classList.toggle('open')
+		const nextState = !expanded
+		toggle.setAttribute('aria-expanded', String(nextState))
+		
+		if (nextState) {
+			nav.classList.remove('hidden')
+			openIcon?.classList.add('hidden')
+			closeIcon?.classList.remove('hidden')
+		} else {
+			nav.classList.add('hidden')
+			openIcon?.classList.remove('hidden')
+			closeIcon?.classList.add('hidden')
+		}
+	})
+
+	// Close menu when mobile nav links are clicked
+	const links = nav.querySelectorAll('a, button')
+	links.forEach(link => {
+		link.addEventListener('click', () => {
+			toggle.setAttribute('aria-expanded', 'false')
+			nav.classList.add('hidden')
+			openIcon?.classList.remove('hidden')
+			closeIcon?.classList.add('hidden')
+		})
 	})
 }
 

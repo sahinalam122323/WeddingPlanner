@@ -18,17 +18,45 @@
             <img src="/src/images/logo.png" alt="Wedding Planning Co." class="h-10 w-auto">
           </div>
 
+          <!-- Desktop Navigation -->
           <div class="hidden lg:flex items-center gap-8 font-opensans">
-            <a href="#" class="text-gray-700 hover:text-[#C5A86B] text-sm font-medium">Home</a>
+            <a href="#" class="text-gray-700 hover:text-[#C5A86B] text-sm font-medium transition">Home</a>
             <a href="#" class="text-gray-700 hover:text-[#C5A86B] text-sm font-medium transition">Service</a>
             <a href="#" class="text-gray-700 hover:text-[#C5A86B] text-sm font-medium transition">Portfolio</a>
             <a href="#" class="text-gray-700 hover:text-[#C5A86B] text-sm font-medium transition">About Us</a>
             <a href="#" class="text-gray-700 hover:text-[#C5A86B] text-sm font-medium transition">Contact</a>
           </div>
 
-          <button class="bg-[#C5A86B] text-white px-6 py-3 rounded font-opensans font-semibold text-sm transition duration-300 ease-out transform hover:-translate-y-1 hover:shadow-xl hover:bg-[#cc9d01]">
-            Book Consultation
+          <!-- Desktop Button -->
+          <div class="hidden lg:block">
+            <button class="bg-[#C5A86B] text-white px-6 py-3 rounded font-opensans font-semibold text-sm transition duration-300 ease-out transform hover:-translate-y-1 hover:shadow-xl hover:bg-[#cc9d01]">
+              Book Consultation
+            </button>
+          </div>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="menu-toggle block lg:hidden text-gray-700 hover:text-[#C5A86B] focus:outline-none" aria-expanded="false" aria-label="Toggle navigation">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <!-- Menu Icon (shows when collapsed) -->
+              <path class="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              <!-- Close Icon (shows when expanded) -->
+              <path class="menu-icon-close hidden" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
           </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="primary-navigation" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-md">
+          <div class="px-8 py-6 flex flex-col gap-4 font-opensans">
+            <a href="#" class="text-gray-700 hover:text-[#C5A86B] text-base font-medium py-2 transition border-b border-gray-50">Home</a>
+            <a href="#" class="text-gray-700 hover:text-[#C5A86B] text-base font-medium py-2 transition border-b border-gray-50">Service</a>
+            <a href="#" class="text-gray-700 hover:text-[#C5A86B] text-base font-medium py-2 transition border-b border-gray-50">Portfolio</a>
+            <a href="#" class="text-gray-700 hover:text-[#C5A86B] text-base font-medium py-2 transition border-b border-gray-50">About Us</a>
+            <a href="#" class="text-gray-700 hover:text-[#C5A86B] text-base font-medium py-2 transition border-b border-gray-50">Contact</a>
+            <button class="w-full bg-[#C5A86B] text-white py-3 rounded font-opensans font-semibold text-base transition duration-300 hover:bg-[#cc9d01] mt-2">
+              Book Consultation
+            </button>
+          </div>
         </div>
       </nav>
 
